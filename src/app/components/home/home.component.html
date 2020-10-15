@@ -1,0 +1,62 @@
+
+<div *ngIf="!tokenExpire; else loggedout">
+
+<table>
+    <tr>
+        <th> First name</th>
+        <th> Last name</th>
+    </tr>
+
+    <tr *ngFor="let user of users">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td><button type="button" class="btn btn-primary" (click) = "edit(user)">Edit</button></td>
+        <td><button type="button" class="btn btn-primary" (click) = "delete(user.id)">Delete</button></td>
+        <td><button type="button" class="btn btn-primary" (click) = "details(user)">Details</button></td>
+
+    </tr>
+
+</table>
+
+<form class="container">
+
+    <div class="form-group">
+        <label>firstname</label>
+        <input type="text" class="form-control" #firstname>
+        
+    </div>
+    <div class="form-group">
+        <label>lastname</label>
+        <input type="text" class="form-control" #lastname>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary" (click) = "createUser(firstname.value,lastname.value)" >Create</button>
+
+
+</form>
+<br>
+
+<form class="container">
+
+    <div class="form-group">
+        <label>group name</label>
+        <input type="text" class="form-control" #groupName>
+        
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary" (click) = "createGroup(groupName.value)" >Create group</button>
+
+
+</form>
+
+
+</div>
+
+<ng-template #loggedout>
+
+    <p>Istekao vam je token, logujte se ponovo</p>
+
+
+</ng-template>

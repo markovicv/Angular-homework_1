@@ -1,0 +1,18 @@
+<h1> Clanovi ove grupe su </h1>
+
+<table>
+    <tr>
+        <th> first name</th>
+        <th> last name</th>
+        
+    </tr>
+
+    <tr *ngFor="let g of group.users">
+        <td>{{g.firstName}}</td>
+        <td>{{g.lastName}}</td>
+        
+        
+
+    </tr>
+
+</table>

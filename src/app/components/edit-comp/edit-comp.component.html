@@ -1,0 +1,18 @@
+
+<form class="container">
+
+    <div class="form-group">
+        <label>firstname</label>
+        <input type="text" class="form-control" value={{user.firstName}} #firstname>
+        
+    </div>
+    <div class="form-group">
+        <label>lastname</label>
+        <input type="text" class="form-control" value = {{user.lastName}} #lastname>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary" (click) = "updateUser(firstname.value,lastname.value)">Submit</button>
+
+
+</form>

@@ -1,0 +1,16 @@
+<p>{{user.firstName}}</p>
+<p>{{user.lastName}}</p>
+<br>
+
+<label> grupe u opticaju</label>
+<br>
+
+<select  name="cars">
+    
+    <option *ngFor="let g of groups" (click)="joinGroup(g.name)">{{g.name}}</option>
+    
+    
+  </select>
+  
+
+<!-- <button type="submit" class="btn btn-primary" (click) = "joinGroup()" >Join</button> -->
